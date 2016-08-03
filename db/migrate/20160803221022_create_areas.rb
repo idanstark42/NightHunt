@@ -1,5 +1,5 @@
 class CreateAreas < ActiveRecord::Migration
-  def change
+  def up
     create_table :areas do |t|
       t.integer :x_coord
       t.integer :y_coord
@@ -10,4 +10,9 @@ class CreateAreas < ActiveRecord::Migration
       t.timestamps null: false
     end
   end
+
+  def down
+    drop_table :areas
+  end
+
 end

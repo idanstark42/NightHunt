@@ -1,5 +1,10 @@
 class AddCurrentAreaToTeam < ActiveRecord::Migration
-  def change
-    add_column :Team, :integer, :area_id, as: 'current_area'
+  def up
+    add_column :teams, :integer, :area_id, as: 'current_area'
   end
+
+  def down
+    remove_column :teams, :area_id
+  end
+
 end
