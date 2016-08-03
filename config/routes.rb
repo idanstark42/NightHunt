@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :achievment_successes
   resources :controls
   resources :achievments
   resources :flags
