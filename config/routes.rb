@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :controls
   resources :achievments
   resources :flags
   resources :areas

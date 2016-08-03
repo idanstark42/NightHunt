@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @control.area %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @control.team %>
+</p>
+
+<p>
+  <strong>Isover:</strong>
+  <%= @control.isOver %>
+</p>
+
+<%= link_to 'Edit', edit_control_path(@control) %> |
+<%= link_to 'Back', controls_path %>
