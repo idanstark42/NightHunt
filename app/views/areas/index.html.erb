@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Areas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>X coord</th>
+      <th>Y coord</th>
+      <th>Riddle text</th>
+      <th>Riddle answer</th>
+      <th>Points</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @areas.each do |area| %>
+      <tr>
+        <td><%= area.x_coord %></td>
+        <td><%= area.y_coord %></td>
+        <td><%= area.riddle_text %></td>
+        <td><%= area.riddle_answer %></td>
+        <td><%= area.points %></td>
+        <td><%= link_to 'Show', area %></td>
+        <td><%= link_to 'Edit', edit_area_path(area) %></td>
+        <td><%= link_to 'Destroy', area, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Area', new_area_path %>

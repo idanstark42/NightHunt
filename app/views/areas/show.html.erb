@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>X coord:</strong>
+  <%= @area.x_coord %>
+</p>
+
+<p>
+  <strong>Y coord:</strong>
+  <%= @area.y_coord %>
+</p>
+
+<p>
+  <strong>Riddle text:</strong>
+  <%= @area.riddle_text %>
+</p>
+
+<p>
+  <strong>Riddle answer:</strong>
+  <%= @area.riddle_answer %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @area.points %>
+</p>
+
+<%= link_to 'Edit', edit_area_path(@area) %> |
+<%= link_to 'Back', areas_path %>
