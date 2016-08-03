@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :flags
   resources :areas
   resources :teams
   # The priority is based upon order of creation: first created -> highest priority.

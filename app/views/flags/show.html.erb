@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @flag.code %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @flag.area %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @flag.team %>
+</p>
+
+<%= link_to 'Edit', edit_flag_path(@flag) %> |
+<%= link_to 'Back', flags_path %>
