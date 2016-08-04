@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
 
-  before_action :authenticate_admin, :except => []
+  before_action :authenticate_admin, :except => [:login]
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # GET /teams
@@ -61,6 +61,10 @@ class TeamsController < ApplicationController
       format.html { redirect_to teams_url, notice: 'Team was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def login
+    respond_with do_login
   end
 
   private

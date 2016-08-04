@@ -1,18 +1,20 @@
+require 'active_support/concern'
 
 module Authentication
+  extend ActiveSupport::Concern
 
   ADMIN_USERNAME = 'admin'
 
-  def login
+  def do_login
 
   end
 
   def authenticate_user
-    params[:authentication] && Team.find_by_id(params[:authentication])
+    redirect_to '/403' unless params[:authentication] && Team.find_by_id(params[:authentication])
   end
 
   def authenticate_admin
-    (team = authenticate_user) && team[:username] = ADMIN_USERNAME
+    redirect_to '/403' unless params[:authentication] && (team = Team.find_by_id(params[:authentication])) && team[:username] = ADMIN_USERNAME
   end
 
 end
