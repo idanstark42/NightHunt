@@ -1,4 +1,6 @@
 class AchievementSuccessesController < ApplicationController
+
+  before_action :authenticate_admin, :except => []
   before_action :set_achievement_success, only: [:show, :edit, :update, :destroy]
 
   # GET /achievement_successes

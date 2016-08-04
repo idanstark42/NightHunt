@@ -1,4 +1,6 @@
 class TeamsController < ApplicationController
+
+  before_action :authenticate_admin, :except => []
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # GET /teams

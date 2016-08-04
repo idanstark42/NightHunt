@@ -1,4 +1,6 @@
 class ControlsController < ApplicationController
+
+  before_action :authenticate_admin, :except => []
   before_action :set_control, only: [:show, :edit, :update, :destroy]
 
   # GET /controls
