@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Achievment Successes</h1>
+<h1>Listing achievement Successes</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Achievment</th>
+      <th>achievement</th>
       <th>Team</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @achievment_successes.each do |achievment_success| %>
+    <% @achievement_successes.each do |achievement_success| %>
       <tr>
-        <td><%= achievment_success.achievment %></td>
-        <td><%= achievment_success.team %></td>
-        <td><%= link_to 'Show', achievment_success %></td>
-        <td><%= link_to 'Edit', edit_achievment_success_path(achievment_success) %></td>
-        <td><%= link_to 'Destroy', achievment_success, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= achievement_success.achievement %></td>
+        <td><%= achievement_success.team %></td>
+        <td><%= link_to 'Show', achievement_success %></td>
+        <td><%= link_to 'Edit', edit_achievement_success_path(achievement_success) %></td>
+        <td><%= link_to 'Destroy', achievement_success, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Achievement success', new_achievment_success_path %>
+<%= link_to 'New Achievement success', new_achievement_success_path %>

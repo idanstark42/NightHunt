@@ -1,1 +1,1 @@
-json.array! @achievments, partial: 'achievements/achievment', as: :achievment
+json.array! @achievements, partial: 'achievements/achievement', as: :achievement

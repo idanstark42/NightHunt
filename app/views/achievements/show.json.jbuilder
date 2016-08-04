@@ -1,1 +1,1 @@
-json.partial! "achievements/achievment", achievment: @achievment
+json.partial! "achievements/achievement", achievement: @achievement

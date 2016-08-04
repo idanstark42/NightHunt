@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class AchievmentSuccessesControllerTest < ActionController::TestCase
+class achievementSuccessesControllerTest < ActionController::TestCase
   setup do
-    @achievment_success = achievment_successes(:one)
+    @achievement_success = achievement_successes(:one)
   end
 
   test "should get index" do
@@ -16,34 +16,34 @@ class AchievmentSuccessesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create achievment_success" do
+  test "should create achievement_success" do
     assert_difference('AchievementSuccess.count') do
-      post :create, achievment_success: { achievment_id: @achievment_success.achievment_id, team_id: @achievment_success.team_id }
+      post :create, achievement_success: { achievement_id: @achievement_success.achievement_id, team_id: @achievement_success.team_id }
     end
 
-    assert_redirected_to achievment_success_path(assigns(:achievment_success))
+    assert_redirected_to achievement_success_path(assigns(:achievement_success))
   end
 
-  test "should show achievment_success" do
-    get :show, id: @achievment_success
+  test "should show achievement_success" do
+    get :show, id: @achievement_success
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @achievment_success
+    get :edit, id: @achievement_success
     assert_response :success
   end
 
-  test "should update achievment_success" do
-    patch :update, id: @achievment_success, achievment_success: { achievment_id: @achievment_success.achievment_id, team_id: @achievment_success.team_id }
-    assert_redirected_to achievment_success_path(assigns(:achievment_success))
+  test "should update achievement_success" do
+    patch :update, id: @achievement_success, achievement_success: { achievement_id: @achievement_success.achievement_id, team_id: @achievement_success.team_id }
+    assert_redirected_to achievement_success_path(assigns(:achievement_success))
   end
 
-  test "should destroy achievment_success" do
+  test "should destroy achievement_success" do
     assert_difference('AchievementSuccess.count', -1) do
-      delete :destroy, id: @achievment_success
+      delete :destroy, id: @achievement_success
     end
 
-    assert_redirected_to achievment_successes_path
+    assert_redirected_to achievement_successes_path
   end
 end

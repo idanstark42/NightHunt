@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Achievments</h1>
+<h1>Listing achievements</h1>
 
 <table>
   <thead>
@@ -12,13 +12,13 @@
   </thead>
 
   <tbody>
-    <% @achievments.each do |achievment| %>
+    <% @achievements.each do |achievement| %>
       <tr>
-        <td><%= achievment.description %></td>
-        <td><%= achievment.points %></td>
-        <td><%= link_to 'Show', achievment %></td>
-        <td><%= link_to 'Edit', edit_achievment_path(achievment) %></td>
-        <td><%= link_to 'Destroy', achievment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= achievement.description %></td>
+        <td><%= achievement.points %></td>
+        <td><%= link_to 'Show', achievement %></td>
+        <td><%= link_to 'Edit', edit_achievement_path(achievement) %></td>
+        <td><%= link_to 'Destroy', achievement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Achievement', new_achievment_path %>
+<%= link_to 'New Achievement', new_achievement_path %>

@@ -1,10 +1,10 @@
-<%= form_for(@achievment_success) do |f| %>
-  <% if @achievment_success.errors.any? %>
+<%= form_for(@achievement_success) do |f| %>
+  <% if @achievement_success.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@achievment_success.errors.count, "error") %> prohibited this achievment_success from being saved:</h2>
+      <h2><%= pluralize(@achievement_success.errors.count, "error") %> prohibited this achievement_success from being saved:</h2>
 
       <ul>
-      <% @achievment_success.errors.full_messages.each do |message| %>
+      <% @achievement_success.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :achievment_id %><br>
-    <%= f.text_field :achievment_id %>
+    <%= f.label :achievement_id %><br>
+    <%= f.text_field :achievement_id %>
   </div>
   <div class="field">
     <%= f.label :team_id %><br>

@@ -1,2 +1,2 @@
-json.extract! achievment, :id, :description, :points, :created_at, :updated_at
-json.url achievment_url(achievment, format: :json)
+json.extract! achievement, :id, :description, :points, :created_at, :updated_at
+json.url achievement_url(achievement, format: :json)

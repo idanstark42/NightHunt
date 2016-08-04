@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class AchievmentsControllerTest < ActionController::TestCase
+class achievementsControllerTest < ActionController::TestCase
   setup do
-    @achievment = achievments(:one)
+    @achievement = achievements(:one)
   end
 
   test "should get index" do
@@ -16,34 +16,34 @@ class AchievmentsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create achievment" do
+  test "should create achievement" do
     assert_difference('Achievement.count') do
-      post :create, achievment: { description: @achievment.description, points: @achievment.points }
+      post :create, achievement: { description: @achievement.description, points: @achievement.points }
     end
 
-    assert_redirected_to achievment_path(assigns(:achievment))
+    assert_redirected_to achievement_path(assigns(:achievement))
   end
 
-  test "should show achievment" do
-    get :show, id: @achievment
+  test "should show achievement" do
+    get :show, id: @achievement
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @achievment
+    get :edit, id: @achievement
     assert_response :success
   end
 
-  test "should update achievment" do
-    patch :update, id: @achievment, achievment: { description: @achievment.description, points: @achievment.points }
-    assert_redirected_to achievment_path(assigns(:achievment))
+  test "should update achievement" do
+    patch :update, id: @achievement, achievement: { description: @achievement.description, points: @achievement.points }
+    assert_redirected_to achievement_path(assigns(:achievement))
   end
 
-  test "should destroy achievment" do
+  test "should destroy achievement" do
     assert_difference('Achievement.count', -1) do
-      delete :destroy, id: @achievment
+      delete :destroy, id: @achievement
     end
 
-    assert_redirected_to achievments_path
+    assert_redirected_to achievements_path
   end
 end
