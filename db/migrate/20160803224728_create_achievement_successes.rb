@@ -1,6 +1,6 @@
-class CreateAchievmentSuccesses < ActiveRecord::Migration
+class CreateAchievementSuccesses < ActiveRecord::Migration
   def up
-    create_table :achievment_successes do |t|
+    create_table :achievement_successes do |t|
       t.references :achievment, index: true, foreign_key: true
       t.references :team, index: true, foreign_key: true
 
@@ -9,7 +9,7 @@ class CreateAchievmentSuccesses < ActiveRecord::Migration
   end
 
   def down
-    drop_table :achievment_successes
+    drop_table :achievement_successes
   end
 
 end

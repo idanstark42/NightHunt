@@ -8,7 +8,7 @@ class AchievmentSuccessesControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:achievment_successes)
+    assert_not_nil assigns(:achievement_successes)
   end
 
   test "should get new" do
@@ -17,7 +17,7 @@ class AchievmentSuccessesControllerTest < ActionController::TestCase
   end
 
   test "should create achievment_success" do
-    assert_difference('AchievmentSuccess.count') do
+    assert_difference('AchievementSuccess.count') do
       post :create, achievment_success: { achievment_id: @achievment_success.achievment_id, team_id: @achievment_success.team_id }
     end
 
@@ -40,7 +40,7 @@ class AchievmentSuccessesControllerTest < ActionController::TestCase
   end
 
   test "should destroy achievment_success" do
-    assert_difference('AchievmentSuccess.count', -1) do
+    assert_difference('AchievementSuccess.count', -1) do
       delete :destroy, id: @achievment_success
     end
 

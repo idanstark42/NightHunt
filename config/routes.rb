@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :achievment_successes
+  resources :achievement_successes
   resources :controls
-  resources :achievments
+  resources :achievements
   resources :flags
   resources :areas
   resources :teams

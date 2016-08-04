@@ -13,17 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20160803224946) do
 
-  create_table "achievment_successes", force: :cascade do |t|
+  create_table "achievement_successes", force: :cascade do |t|
     t.integer  "achievment_id"
     t.integer  "team_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
-  add_index "achievment_successes", ["achievment_id"], name: "index_achievment_successes_on_achievment_id"
-  add_index "achievment_successes", ["team_id"], name: "index_achievment_successes_on_team_id"
+  add_index "achievement_successes", ["achievment_id"], name: "index_achievement_successes_on_achievment_id"
+  add_index "achievement_successes", ["team_id"], name: "index_achievement_successes_on_team_id"
 
-  create_table "achievments", force: :cascade do |t|
+  create_table "achievements", force: :cascade do |t|
     t.string   "description"
     t.integer  "points"
     t.datetime "created_at",  null: false

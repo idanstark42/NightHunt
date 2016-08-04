@@ -1,6 +1,6 @@
-class CreateAchievments < ActiveRecord::Migration
+class CreateAchievements < ActiveRecord::Migration
   def up
-    create_table :achievments do |t|
+    create_table :achievements do |t|
       t.string :description
       t.integer :points
 
@@ -9,7 +9,7 @@ class CreateAchievments < ActiveRecord::Migration
   end
 
   def down
-    drop_table :achievments
+    drop_table :achievements
   end
 
 end

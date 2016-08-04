@@ -1,0 +1,1 @@
+json.array! @achievments, partial: 'achievements/achievment', as: :achievment
