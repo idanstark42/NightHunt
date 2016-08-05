@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
 
-  before_action :authenticate_admin, :except => [:login]
+  before_action :authenticate_admin, :except => [:login, :logout]
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # GET /teams
@@ -64,7 +64,11 @@ class TeamsController < ApplicationController
   end
 
   def login
-    respond_with do_login
+    do_login
+  end
+
+  def logout
+    do_logout
   end
 
   private
