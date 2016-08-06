@@ -25,11 +25,11 @@ module Authentication
   end
 
   def authenticate_user
-    redirect_to '/403' unless session[:authentication] && Team.find_by_id(session[:authentication])
+    redirect_to '/403' unless session[:authentication] && Team.find_by_id(session[:authentication]) != nil
   end
 
   def authenticate_admin
-    redirect_to '/403' unless session[:authentication] && (team = Team.find_by_id(session[:authentication])) && team[:name] == ADMIN_USERNAME
+    redirect_to '/403' unless session[:authentication] && (team = Team.find_by_id(session[:authentication])) != nil && team[:name] == ADMIN_USERNAME
   end
 
 end

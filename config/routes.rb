@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  resources :achievement_successes
-  resources :controls
-  resources :achievements
-  resources :flags
-  resources :areas
-  resources :teams
-
   post 'teams/login', :defaults => { format: :json }
   post 'teams/logout', :defaults => { format: :json }
 
@@ -13,13 +6,20 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get 'areas/riddle', :defaults => { format: :json }
-  get 'areas/solve_riddle', :defaults => { format: :json }
+  post 'areas/solve_riddle/id', :defaults => { format: :json }
 
   post 'flags/solve', :defaults => { format: :json }
 
   get 'achievements/all', :defaults => { format: :json }
 
   root 'home#index'
+
+  resources :achievement_successes
+  resources :controls
+  resources :achievements
+  resources :flags
+  resources :areas
+  resources :teams
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -5,13 +5,18 @@ class Area < ActiveRecord::Base
   has_many :flags
 
   def current_team_control
-    controls.where { |control| !control.isOver }.first
+    current_teams = controls.find_by_isOver(false)
+    if current_teams
+      current_teams.first
+    else
+      { team: nil }
+    end
   end
 
   def status_hash(team)
     {
         area_id: id,
-        controlling_team: current_team_control.team,
+        controlling_team: current_team_control[:team],
         points: points,
         flags_count: flags.count,
         was_controlled: teams.include?(team)

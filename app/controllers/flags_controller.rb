@@ -1,6 +1,6 @@
 class FlagsController < ApplicationController
 
-  before_action :authenticate_admin, :except => [:aolve]
+  before_action :authenticate_admin, :except => [:solve]
   before_action :set_flag, only: [:show, :edit, :update, :destroy]
 
   # GET /flags
@@ -64,7 +64,7 @@ class FlagsController < ApplicationController
   end
 
   def solve
-    flag = Flags.find(code: params[:code])
+    flag = Flag.find(code: params[:code])
     if(flag)
       flag.team = Team.find_by_id(session[:authentication])
       flag.save
