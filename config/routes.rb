@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get 'areas/riddle'
   get 'areas/solve_riddle'
 
+  post 'flags/solve'
+
+  get 'achievements/all'
+
   root 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

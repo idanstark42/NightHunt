@@ -63,6 +63,12 @@ class AchievementsController < ApplicationController
     end
   end
 
+  def all
+    respond_with do |format|
+      format.json { render json: { achievments: Achievement.display_array } }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_achievement
