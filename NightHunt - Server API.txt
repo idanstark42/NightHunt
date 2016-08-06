@@ -1,0 +1,49 @@
+------------------------------Server API------------------------------
+
+------Users API------
+GET home/index
+	returns index page
+GET home/status
+	returns status json:
+	{ 		
+		xp = team.points,
+                areas = [{
+				area_id = ...,
+        			controlling_team = ...,
+        			points = ...,
+        			flags_count = ...,
+        			was_controlled = ...
+			},...],
+                leading_teams = [{ name = team1.name, score = team1.points },
+				{ name = team2.name, score = team2.points }...]
+	}
+POST teams/login
+	params: { team_name = ..., password = ... }
+	returns json: { authentication = team_id }
+POST teams/logout
+
+GET areas/riddle
+	params: { id = area_id }	
+	returns json: {  riddle: riddle_html... }
+POST areas/solve_riddle
+	params: { id = area_id }
+	returns json: { result =..., points =... }
+
+POST flags/solve
+	params: { code =... }
+	returns json: { flag: true or false }
+
+GET achievments/all
+	returns json: { achievments = [{
+          					id = ...,
+          					is_obtained = ...,
+          					points = ...
+      					},...] }
+
+------Admin API------
+GET teams/index 		----	all teams 			+ team CRUD functions
+GET areas/index 		----	all areas 			+ area CRUD functions
+GET flags/index 		----	all flags 			+ flag CRUD functions
+GET achievments/index 		----	all achievments 		+ achievment CRUD functions
+GET controls/index 		----	all team-area controls 		+ control CRUD functions
+GET successfulAchievments/index ----	all successful achievment 	+ successful achievment CRUD functions
