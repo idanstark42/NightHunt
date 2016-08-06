@@ -65,7 +65,7 @@ class AchievementsController < ApplicationController
 
   def all
     respond_to do |format|
-      format.json { render json: { achievments: Achievement.display_array(session[:authentication]) } }
+      format.json { render json: { achievments: Achievement.display_array} }
     end
   end
 

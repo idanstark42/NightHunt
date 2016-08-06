@@ -1,5 +1,6 @@
 class Area < ActiveRecord::Base
 
+  belongs_to :team
   has_many :controls
   has_many :teams, :through => :controls
   has_many :flags

@@ -71,7 +71,7 @@ class AreasController < ApplicationController
 
   def solve_riddle
     if @area.riddle_answer == params[:answer]
-      @area.transfer_controler params[:authentication]
+      @area.transfer_control params[:authentication]
       respond_to do |format|
         format.json {render json: { result: true, points: @area.points } }
       end

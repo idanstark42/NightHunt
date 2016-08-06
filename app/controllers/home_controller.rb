@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   end
 
   def status
-    team = Team.find_by_id(session[:authentication])
+    team = team_in_session
     respond_to do |format|
       format.json { render :json => { xp: team.points,
                                       areas: areas_json_for_team(team),

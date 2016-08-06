@@ -1,6 +1,6 @@
 class AchievementSuccessesController < ApplicationController
 
-  before_action :authenticate_admin, :except => []
+  before_action :authenticate_admin
   before_action :set_achievement_success, only: [:show, :edit, :update, :destroy]
 
   # GET /achievement_successes
@@ -27,6 +27,9 @@ class AchievementSuccessesController < ApplicationController
   # POST /achievement_successes.json
   def create
     @achievement_success = AchievementSuccess.new(achievement_success_params)
+
+    @achievement_success.team.points += @achievement_success.achievement.points
+    @achievement_success.team.save
 
     respond_to do |format|
       if @achievement_success.save

@@ -65,9 +65,13 @@ class FlagsController < ApplicationController
 
   def solve
     flag = Flag.find(code: params[:code])
-    if(flag)
-      flag.team = Team.find_by_id(session[:authentication])
+    if(flag && flag.team == nil)
+      team = team_in_session
+      flag.team = team
       flag.save
+
+      team.points += flag.points
+      team.save
       respond_to? do |format|
         format.json {render json: { flag: true } }
       end
