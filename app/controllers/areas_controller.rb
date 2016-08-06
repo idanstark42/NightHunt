@@ -1,7 +1,7 @@
 class AreasController < ApplicationController
 
-  before_action :authenticate_admin, :except => []
-  before_action :set_area, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin, :except => [:riddle, :solve_riddle]
+  before_action :set_area, only: [:show, :edit, :update, :destroy, :riddle, :solve_riddle]
 
   # GET /areas
   # GET /areas.json
@@ -60,6 +60,25 @@ class AreasController < ApplicationController
     respond_to do |format|
       format.html { redirect_to areas_url, notice: 'Area was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def riddle
+    respond_to do |format|
+      format.json {render json: { riddle: @area.riddle_text.html_safe } }
+    end
+  end
+
+  def solve_riddle
+    if @area.riddle_answer == params[:answer]
+      area.transfer_controler params[:authentication]
+      respond_to do |format|
+        format.json {render json: { result: true, points: area.points } }
+      end
+    else
+      respond_to do |format|
+        format.json {render json: { result: false } }
+      end
     end
   end
 
