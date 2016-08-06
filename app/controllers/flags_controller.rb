@@ -63,6 +63,21 @@ class FlagsController < ApplicationController
     end
   end
 
+  def solve
+    flag = Flags.find(code: params[:code])
+    if(flag)
+      flag.team = Team.find_by_id(session[:authentication])
+      flag.save
+      respond_to? do |format|
+        format.json {render json: { flag: true } }
+      end
+    else
+      respond_to? do |format|
+        format.json {render json: { flag: false } }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_flag

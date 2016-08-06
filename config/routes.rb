@@ -7,8 +7,13 @@ Rails.application.routes.draw do
   resources :teams
 
   post 'teams/login'
+  post 'teams/logout'
+
   get 'home/status'
   get 'home/index'
+
+  get 'areas/riddle'
+  get 'areas/solve_riddle'
 
   root 'home/index'
 
