@@ -1,6 +1,6 @@
 class AchievementsController < ApplicationController
 
-  before_action :authenticate_admin, :except => []
+  before_action :authenticate_admin, :except => [:all]
   before_action :set_achievement, only: [:show, :edit, :update, :destroy]
 
   # GET /achievements
