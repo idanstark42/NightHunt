@@ -17,15 +17,15 @@ class Area < ActiveRecord::Base
   def status_hash(team)
     {
         area_id: id,
-        controlling_team: current_team_control,
+        controlling_team: current_team_control.team,
         points: points,
         flags_count: flags.count,
         was_controlled: teams.include?(team)
     }
   end
 
-  def transfer_control(team_id)
-    new_team = Team.find_by_id(team_id)
+  def transfer_control
+    new_team = team_in_session
     current_team_control.isOver = true
     current_team_control.save
     Control.create team: new_team, area: self, isOver: false
