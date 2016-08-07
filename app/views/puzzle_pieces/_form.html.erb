@@ -1,4 +1,4 @@
-<%= form_for(@puzzle_piece) do |f| %>
+<%= form_for(@puzzle_piece, :html => { :multipart => true }) do |f| %>
   <% if @puzzle_piece.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@puzzle_piece.errors.count, "error") %> prohibited this puzzle_piece from being saved:</h2>
@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :image_uri %><br>
-    <%= f.text_field :image_uri %>
+    <%= f.file :image_uri %>
   </div>
   <div class="field">
     <%= f.label :note %><br>

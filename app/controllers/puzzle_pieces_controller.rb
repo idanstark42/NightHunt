@@ -26,6 +26,12 @@ class PuzzlePiecesController < ApplicationController
   # POST /puzzle_pieces
   # POST /puzzle_pieces.json
   def create
+
+    uploaded_file = params[:person][:picture]
+    File.open(Rails.root.join('public', 'uploads', 'puzzle', uploaded_file.original_filename), 'wb') do |file|
+      file.write uploaded_file.read
+    end
+
     @puzzle_piece = PuzzlePiece.new(puzzle_piece_params)
 
     respond_to do |format|
