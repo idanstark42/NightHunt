@@ -24,7 +24,7 @@ private
   end
 
   def leader_board
-    Team.order(:points).take(5).map { |team| { name: team.name, score: team.points } }
+    Team.order(points: :desc).take(5).map { |team| { name: team.name, score: team.points } }
   end
 
 end
