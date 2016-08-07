@@ -8,9 +8,10 @@ class Area < ActiveRecord::Base
   def current_team_control
     current_teams = controls.find_by_isOver(false)
     if current_teams
+      logger.debug "team_control=#{current_teams}"
       current_teams
     else
-      { team: nil }
+      nil
     end
   end
 
