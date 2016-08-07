@@ -1,6 +1,7 @@
 class AreasController < ApplicationController
 
   before_action :authenticate_admin, :except => [:riddle, :solve_riddle]
+  before_action :authenticate_user, :only => [:riddle, :solve_riddle]
   before_action :set_area, only: [:show, :edit, :update, :destroy, :riddle, :solve_riddle]
 
   # GET /areas

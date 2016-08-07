@@ -1,6 +1,7 @@
 class TeamsController < ApplicationController
 
   before_action :authenticate_admin, :except => [:login, :logout]
+  before_action :authenticate_user, :only => [:logout]
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # GET /teams

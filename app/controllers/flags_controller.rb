@@ -1,6 +1,7 @@
 class FlagsController < ApplicationController
 
   before_action :authenticate_admin, :except => [:solve]
+  before_action :authenticate_user, :only => [:solve]
   before_action :set_flag, only: [:show, :edit, :update, :destroy]
 
   # GET /flags
