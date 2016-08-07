@@ -1,6 +1,6 @@
 class PuzzlePiecesController < ApplicationController
 
-  #before_action :authenticate_admin, :except => [:get]
+  before_action :authenticate_admin, :except => [:get]
   before_action :set_puzzle_piece, only: [:show, :edit, :update, :destroy]
 
   # GET /puzzle_pieces
