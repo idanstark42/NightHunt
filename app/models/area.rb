@@ -14,6 +14,15 @@ class Area < ActiveRecord::Base
     end
   end
 
+  def current_team
+    current_teams = controls.find_by_isOver(false)
+    if current_teams
+      current_teams.team
+    else
+      nil
+    end
+  end
+
   def status_hash(team)
     {
         area_id: id,
@@ -26,8 +35,11 @@ class Area < ActiveRecord::Base
 
   def transfer_control
     new_team = team_in_session
-    current_team_control.isOver = true
-    current_team_control.save
+    old_team_control = current_team_control
+    if old_team_control
+      old_team_control.isOver = true
+      old_team_control.save
+    end
     Control.create team: new_team, area: self, isOver: false
   end
 
