@@ -17,7 +17,7 @@ class Area < ActiveRecord::Base
   def status_hash(team)
     {
         area_id: id,
-        controlling_team: current_team_control[:team],
+        controlling_team: current_team_control,
         points: points,
         flags_count: flags.count,
         was_controlled: teams.include?(team)
