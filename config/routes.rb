@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'achievements/all', :defaults => { format: :json }
 
+  get 'puzzle_piece_reveals/get', :defaults => { format: :json }
+
   root 'home#index'
 
   resources :achievement_successes

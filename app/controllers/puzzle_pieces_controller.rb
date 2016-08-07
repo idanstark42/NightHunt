@@ -1,6 +1,6 @@
 class PuzzlePiecesController < ApplicationController
 
-  before_action :authenticate_admin, :except => []
+  before_action :authenticate_admin, :except => [:get]
   before_action :set_puzzle_piece, only: [:show, :edit, :update, :destroy]
 
   # GET /puzzle_pieces
@@ -60,6 +60,21 @@ class PuzzlePiecesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to puzzle_pieces_url, notice: 'Puzzle piece was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def get
+    team = team_in_session
+    if team.deserve_another_piece? && params[:piece_x] && params[:piece_y]
+      puzzle_piece = PuzzlePiece.find(x_coord: params[:piece_x], y_coord: params[:piece_y])
+      PuzzlePieceReveal.create :puzzle_piece => puzzle_piece, :team => team
+      respond_to do |format|
+        format.json { render json: { piece: puzzle_piece } }
+      end
+    else
+      respond_to do |format|
+        format.json { render json: { piece: nil } }
+      end
     end
   end
 
