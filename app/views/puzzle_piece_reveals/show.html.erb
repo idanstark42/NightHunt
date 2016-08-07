@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Puzzle piece:</strong>
+  <%= @puzzle_piece_reveal.puzzle_piece %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @puzzle_piece_reveal.team %>
+</p>
+
+<%= link_to 'Edit', edit_puzzle_piece_reveal_path(@puzzle_piece_reveal) %> |
+<%= link_to 'Back', puzzle_piece_reveals_path %>
