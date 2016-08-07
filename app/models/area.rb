@@ -8,7 +8,6 @@ class Area < ActiveRecord::Base
   def current_team_control
     current_teams = controls.find_by_isOver(false)
     if current_teams
-      logger.debug "team_control=#{current_teams}"
       current_teams
     else
       nil
@@ -27,7 +26,7 @@ class Area < ActiveRecord::Base
   def status_hash(team)
     {
         area_id: id,
-        controlling_team: current_team_control.team,
+        controlling_team: current_team,
         points: points,
         flags_count: flags.count,
         was_controlled: teams.include?(team)
