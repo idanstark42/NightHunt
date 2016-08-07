@@ -23,7 +23,7 @@ class Team < ActiveRecord::Base
   end
 
   def deserve_another_piece?
-    right_piece_count = Math.floor(points / Team::POINTS_PER_PIECE)
+    right_piece_count = points.floor / Team::POINTS_PER_PIECE
     right_piece_count > puzzle_pieces.length
   end
 
