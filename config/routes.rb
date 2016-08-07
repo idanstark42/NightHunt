@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'achievements/all', :defaults => { format: :json }
 
+  get 'puzzle_piece_reveals/get', :defaults => { format: :json }
+
   root 'home#index'
 
   resources :achievement_successes
@@ -20,6 +22,8 @@ Rails.application.routes.draw do
   resources :flags
   resources :areas
   resources :teams
+  resources :puzzle_pieces
+  resources :puzzle_piece_reveals
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

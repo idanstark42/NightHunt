@@ -7,6 +7,7 @@ class HomeController < ApplicationController
     team = team_in_session
     respond_to do |format|
       format.json { render :json => { xp: team.points,
+                                      another_piece: team.deserve_another_piece?,
                                       areas: areas_json_for_team(team),
                                       leading_teams: leader_board
       } }

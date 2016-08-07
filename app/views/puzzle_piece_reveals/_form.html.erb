@@ -1,0 +1,25 @@
+<%= form_for(@puzzle_piece_reveal) do |f| %>
+  <% if @puzzle_piece_reveal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@puzzle_piece_reveal.errors.count, "error") %> prohibited this puzzle_piece_reveal from being saved:</h2>
+
+      <ul>
+      <% @puzzle_piece_reveal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :puzzle_piece_id %><br>
+    <%= f.text_field :puzzle_piece_id %>
+  </div>
+  <div class="field">
+    <%= f.label :team_id %><br>
+    <%= f.text_field :team_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

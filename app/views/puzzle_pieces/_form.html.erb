@@ -1,0 +1,33 @@
+<%= form_for(@puzzle_piece) do |f| %>
+  <% if @puzzle_piece.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@puzzle_piece.errors.count, "error") %> prohibited this puzzle_piece from being saved:</h2>
+
+      <ul>
+      <% @puzzle_piece.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :x_coord %><br>
+    <%= f.number_field :x_coord %>
+  </div>
+  <div class="field">
+    <%= f.label :y_coord %><br>
+    <%= f.number_field :y_coord %>
+  </div>
+  <div class="field">
+    <%= f.label :image_uri %><br>
+    <%= f.text_field :image_uri %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_field :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>X coord:</strong>
+  <%= @puzzle_piece.x_coord %>
+</p>
+
+<p>
+  <strong>Y coord:</strong>
+  <%= @puzzle_piece.y_coord %>
+</p>
+
+<p>
+  <strong>Image uri:</strong>
+  <%= @puzzle_piece.image_uri %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @puzzle_piece.note %>
+</p>
+
+<%= link_to 'Edit', edit_puzzle_piece_path(@puzzle_piece) %> |
+<%= link_to 'Back', puzzle_pieces_path %>

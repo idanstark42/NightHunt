@@ -1,0 +1,1 @@
+json.array! @puzzle_piece_reveals, partial: 'puzzle_piece_reveals/puzzle_piece_reveal', as: :puzzle_piece_reveal

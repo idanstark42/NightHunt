@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Puzzle Pieces</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>X coord</th>
+      <th>Y coord</th>
+      <th>Image uri</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @puzzle_pieces.each do |puzzle_piece| %>
+      <tr>
+        <td><%= puzzle_piece.x_coord %></td>
+        <td><%= puzzle_piece.y_coord %></td>
+        <td><%= puzzle_piece.image_uri %></td>
+        <td><%= puzzle_piece.note %></td>
+        <td><%= link_to 'Show', puzzle_piece %></td>
+        <td><%= link_to 'Edit', edit_puzzle_piece_path(puzzle_piece) %></td>
+        <td><%= link_to 'Destroy', puzzle_piece, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Puzzle piece', new_puzzle_piece_path %>

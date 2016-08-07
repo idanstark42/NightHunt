@@ -1,0 +1,1 @@
+json.partial! "puzzle_piece_reveals/puzzle_piece_reveal", puzzle_piece_reveal: @puzzle_piece_reveal
