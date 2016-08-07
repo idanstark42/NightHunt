@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'teams/login', :defaults => { format: :json }
   post 'teams/login', :defaults => { format: :json }
   post 'teams/logout', :defaults => { format: :json }
 
