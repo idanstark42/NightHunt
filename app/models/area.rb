@@ -7,9 +7,7 @@ class Area < ActiveRecord::Base
 
   def current_team_control
     current_teams = controls.find_by_isOver(false)
-    if current_teams.many?
-      current_teams.first
-    elsif current_teams
+    if current_teams
       current_teams
     else
       { team: nil }
